@@ -56,6 +56,8 @@ interface GameScreenProps {
   muted: boolean;
   onToggleMute: () => void;
   settings: Settings;
+  /** 4.0: keeps PinballApp settings state in sync (e.g. tutorialSeen). */
+  onSettingsChange?: (s: Settings) => void;
 }
 
 const INITIAL_HUD: HudSnapshot = {
@@ -102,6 +104,7 @@ export function GameScreen({
   muted,
   onToggleMute,
   settings,
+  onSettingsChange,
 }: GameScreenProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dmdCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -727,6 +730,7 @@ export function GameScreen({
             onClick={() => {
               markTutorialSeen();
               setShowTutorial(false);
+              onSettingsChange?.({ ...settings, tutorialSeen: true });
             }}
           >
             ENTENDI, JOGAR
