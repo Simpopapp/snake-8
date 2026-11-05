@@ -730,6 +730,7 @@ export function GameScreen({
             onClick={() => {
               markTutorialSeen();
               setShowTutorial(false);
+              onSettingsChange?.({ ...settings, tutorialSeen: true });
             }}
           >
             ENTENDI, JOGAR
