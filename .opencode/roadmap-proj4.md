@@ -52,9 +52,20 @@ começa em R1 (roadmap 3 concluído e verificado).
 - GATES: fluxo completo no browser ✔ (no R9); tsgo limpo ✔; suíte ✔.
 
 ## R9 — Verificação final
-- [ ] Playthrough E2E (mesas novas, rampa/ímã/lock/patrulha, campanha, 4 desafios, torneio, XP/skin)
-- [ ] Regressão: recordes neonvolt.v1, progress v1 tolerante, hooks DEV; build de produção
+- [x] Playthrough E2E (mesas novas, rampa/ímã/lock/patrulha, campanha, 4 desafios, torneio, XP/skin)
+- [x] Regressão: recordes neonvolt.v1, progress v1 tolerante, hooks DEV; build de produção
 - GATES: critérios PRD §7 todos verdes ✔; build OK ✔; 0 erros de console ✔.
 
 ## Registro de execução (remix 4)
-- (preenchido durante a execução)
+- R9 (agente principal): suíte 45/45 ✔; tsgo limpo ✔. E2E browser (Playwright):
+  menu 6 abas + 12 mesas, Reator trancado (18★), partida em Orquestra Neural
+  (missão "Sinfonia" concluída via hook DEV, estrela de missão no game over,
+  +195 XP · NÍVEL 1, NOVO RECORDE, conquista "Novato do Volt"), estrela
+  persistida na aba CAMPANHA; desafio TEMPO encerrou pelo relógio (chip ⏱ +
+  game over de desafio); desafio CAOS iniciou com 3 bolas (chip CAOS, BOLA
+  1/3); torneio iniciou (HUD TORNEIO 1/12); skin de bola nos AJUSTES.
+  Regressão: recordes neonvolt.v1 preservados após reload; hooks DEV só em
+  DEV; build de produção OK. Fix de regressão encontrado no E2E: "ENTENDI,
+  JOGAR" agora sincroniza tutorialSeen no PinballApp (GameScreen
+  onSettingsChange) — tutorial não reaparece em novas sessões; verificado
+  no browser. 0 erros de console em todo o E2E.
