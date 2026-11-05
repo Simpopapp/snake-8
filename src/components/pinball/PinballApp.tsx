@@ -146,6 +146,7 @@ export default function PinballApp() {
         muted={muted}
         onToggleMute={() => setMuted(toggleMute())}
         settings={settings}
+        onSettingsChange={handleSettingsChange}
       />
     );
   }
