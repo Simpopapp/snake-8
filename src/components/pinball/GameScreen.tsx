@@ -56,6 +56,8 @@ interface GameScreenProps {
   muted: boolean;
   onToggleMute: () => void;
   settings: Settings;
+  /** 4.0: keeps PinballApp settings state in sync (e.g. tutorialSeen). */
+  onSettingsChange?: (s: Settings) => void;
 }
 
 const INITIAL_HUD: HudSnapshot = {
