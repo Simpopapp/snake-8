@@ -104,6 +104,7 @@ export function GameScreen({
   muted,
   onToggleMute,
   settings,
+  onSettingsChange,
 }: GameScreenProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dmdCanvasRef = useRef<HTMLCanvasElement>(null);
